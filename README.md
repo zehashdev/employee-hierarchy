@@ -1,14 +1,15 @@
 # Employee Hierarchy Application
 
-This is a React and TypeScript-based application that visualizes an organization’s employee hierarchy in a table format. It dynamically renders employee-manager relationships, showing hierarchical levels and displaying employees without subordinates in a separate column.
+This is a React and ts-based application that visualizes an organization’s employee hierarchy in a table format. It dynamically renders employee-manager relationships, showing hierarchical levels and displaying employees without subordinates in a separate cols.
 
 ## Table of Contents
 
-  - [Employee Hierarchy Application](#employee-hierarchy-application)
+- [Employee Hierarchy Application](#employee-hierarchy-application)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Project Structure](#project-structure)
+  - [Github URL](#github-url)
 
 ## Features
 
@@ -31,3 +32,7 @@ src/
 │   ├── Table.data.tsx
 │   └── Table.component.tsx
 └── App.tsx
+
+## Github URL
+
+https://github.com/zehashdev/employee-hierarchy
