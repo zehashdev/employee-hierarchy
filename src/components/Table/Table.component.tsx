@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  Employee,
-  employeeData,
-  employeeDataUptoLevelThree,
-  employeeDataWithMultipleLevels,
-} from './Table.data';
+import { Employee, HierarchicalEmployee } from './Table.type';
+import { employeeDataWithMultipleLevels } from './Table.data';
 
 // Styled components for the table
 const StyledTable = styled.table`
@@ -28,13 +24,6 @@ const TableCell = styled.td<{ level?: number }>`
   padding: 8px;
   text-align: center;
 `;
-
-type HierarchicalEmployee = {
-  name: string;
-  subordinates: HierarchicalEmployee[];
-  level: number;
-  hasSubordinates: boolean;
-};
 
 // Convert flat data to hierarchical data and calculate levels
 function buildHierarchy(data: Employee[]): {

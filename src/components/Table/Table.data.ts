@@ -1,9 +1,4 @@
-// Employee Interface
-export type Employee = {
-  id: number;
-  name: string;
-  manager_id: number | null;
-};
+import { Employee } from './Table.type';
 
 export const employeeData: Employee[] = [
   { id: 100, name: 'Alan', manager_id: 150 },
