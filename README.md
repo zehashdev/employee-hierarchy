@@ -17,6 +17,10 @@ This is a React and ts-based application that visualizes an organization’s emp
 - **Dynamic Hierarchical Levels**: Supports any depth of hierarchy based on the provided employee-manager data.
 - **Responsive Design**: Uses styled-components to create a flexible and responsive layout.
 
+Users have access to 3 different data objects - you can find them in the Table.data.ts file - the original being the table data given in the test whereas the other 2 being larger and more complex variations of the data.
+
+Added in new pre commit husky config that applied linting and prettier conventions before code commits to improve code quality and consistency at commit time. 
+
 ## Technologies Used
 
 - **React** with **TypeScript**: For building a robust, type-safe UI.
