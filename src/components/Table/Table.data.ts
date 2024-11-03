@@ -1,6 +1,6 @@
 import { Employee } from './Table.type';
 
-export const employeeData: Employee[] = [
+export const employeeData1: Employee[] = [
   { id: 100, name: 'Alan', manager_id: 150 },
   { id: 220, name: 'Martin', manager_id: 100 },
   { id: 150, name: 'Jamie', manager_id: null },
@@ -9,7 +9,7 @@ export const employeeData: Employee[] = [
   { id: 190, name: 'David', manager_id: 400 },
 ];
 
-export const employeeDataUptoLevelThree: Employee[] = [
+export const employeeData2: Employee[] = [
   { id: 100, name: 'Alan', manager_id: 150 },
   { id: 220, name: 'Martin', manager_id: 100 },
   { id: 150, name: 'Jamie', manager_id: null }, // Level 1 (CEO)
@@ -20,7 +20,7 @@ export const employeeDataUptoLevelThree: Employee[] = [
   { id: 500, name: 'Chris', manager_id: 150 }, // Level 2 (No subordinates)
 ];
 
-export const employeeDataWithMultipleLevels: Employee[] = [
+export const employeeData3: Employee[] = [
   { id: 150, name: 'Jamie', manager_id: null }, // Level 1 (CEO)
   { id: 100, name: 'Alan', manager_id: 150 },
   { id: 400, name: 'Steve', manager_id: 150 },

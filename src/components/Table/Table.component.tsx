@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Employee, HierarchicalEmployee } from './Table.type';
-import { employeeDataWithMultipleLevels } from './Table.data';
 
 // Styled components for the table
 const StyledTable = styled.table`
@@ -16,8 +15,6 @@ const TableHeader = styled.th`
   background-color: #333;
   color: #fff;
 `;
-
-const TableRow = styled.tr``;
 
 const TableCell = styled.td<{ level?: number }>`
   border: 1px solid #ddd;
@@ -53,7 +50,7 @@ function buildHierarchy(data: Employee[]): {
       const manager = employeeMap[employee.manager_id];
       const subordinate = employeeMap[employee.id];
       subordinate.level = manager.level + 1;
-      // Manager types shoudl be marked with true
+      // Manager types should be marked with true
       manager.hasSubordinates = true;
       maxLevel = Math.max(maxLevel, subordinate.level);
       manager.subordinates.push(subordinate);
@@ -84,7 +81,7 @@ const renderRows = (
     <TableCell key={index}>{getCellContent(index, data, maxLevel)}</TableCell>
   ));
 
-  const row = <TableRow key={data.name}>{cells}</TableRow>;
+  const row = <tr key={data.name}>{cells}</tr>;
 
   const subordinateRows = data.subordinates
     .map((subordinate) => renderRows(subordinate, maxLevel))
@@ -93,9 +90,13 @@ const renderRows = (
   return [row, ...subordinateRows];
 };
 
+interface TableProps {
+  employeeData: Employee[];
+}
+
 // Table component
-const Table: React.FC = () => {
-  const { root, maxLevel } = buildHierarchy(employeeDataWithMultipleLevels);
+const Table = ({ employeeData }: TableProps) => {
+  const { root, maxLevel } = buildHierarchy(employeeData);
 
   return (
     <StyledTable>
@@ -111,9 +112,9 @@ const Table: React.FC = () => {
         {root ? (
           renderRows(root, maxLevel)
         ) : (
-          <TableRow>
+          <tr>
             <TableCell colSpan={1}>No data available</TableCell>
-          </TableRow>
+          </tr>
         )}
       </tbody>
     </StyledTable>
